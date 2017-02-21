@@ -76,4 +76,35 @@ function merge(left, right)
     return result;
 }
 
-console.log(mergeSort(a));
+// console.log(mergeSort(a));
+
+// BUBBLE SORT
+
+function bubbleSort(arr) {
+  let d1 = new Date();
+  for (let i = 0; i < arr.length; i++) {
+    for (let k = 0; k < arr.length; k++) {
+      if (arr[k] > arr[k + 1]) {
+        let tmp = arr[k]
+        arr[k] = arr[k + 1]
+        arr[k + 1] = tmp
+      }
+    }
+  }
+
+  let d2 = new Date();
+
+  let time = d2.getMilliseconds() - d1.getMilliseconds();
+
+  return time;
+}
+
+console.log(bubbleSort(arr));
+
+let d1 = new Date();
+mergeSort(arr);
+let d2 = new Date();
+
+let time = d2.getMilliseconds() - d1.getMilliseconds();
+
+console.log(time);
