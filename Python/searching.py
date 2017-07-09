@@ -1,4 +1,5 @@
 import sorting
-import numpy as np
 
-np.
+sorting.bubbleSort(sorting.array)
+print sorting.array
+
