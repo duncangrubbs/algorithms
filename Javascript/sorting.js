@@ -1,11 +1,9 @@
-let arr = [4, 61, 2, 43, 8, 7, 4, 6, 5, 72, 24, 1, 4, 31, 33, 4, 56, 76, 34, 23, 84, 63, 56, 73, 12, 54, 32, 21, 54, 90, 43, 21,
-            55, 43, 2, 4, 56, 786, 43, 5];
-
-
+let a = [4, 61, 2, 43, 8, 7, 4, 6, 5, 72, 24, 1, 4, 31, 33, 4, 56, 76, 34, 23, 84, 63, 56, 73, 12, 54, 32, 21, 54, 90, 43, 21,
+            55, 43, 2, 4, 56, 786, 43, 5, 67, 45, 20, 21, 34, 67, 45, 34, 89, 90, 21, 78, 34, 23, 21, 5, 3, 23, 2, 99, 234, 54, 123, 45, 867, 34, 67, 2];
 
 // QUICK SORT
 
-let pivot = arr[arr.length - 1];
+let pivot = a[a.length - 1];
 let wall = 0;
 let current;
 
@@ -34,14 +32,11 @@ function quickSort() {
     k++;
   }
 
-  console.log(array);
+  return arr;
 }
 
-// quickSort();
 
 // MERGE SORT
-
-let a = [34, 203, 3, 746, 200, 984, 198, 764, 9];
 
 function mergeSort(arr)
 {
@@ -55,8 +50,7 @@ function mergeSort(arr)
     return merge(mergeSort(left), mergeSort(right));
 }
 
-function merge(left, right)
-{
+function merge(left, right) {
     let result = [];
 
     while (left.length && right.length) {
@@ -76,35 +70,17 @@ function merge(left, right)
     return result;
 }
 
-// console.log(mergeSort(a));
-
 // BUBBLE SORT
 
 function bubbleSort(arr) {
-  let d1 = new Date();
   for (let i = 0; i < arr.length; i++) {
     for (let k = 0; k < arr.length; k++) {
       if (arr[k] > arr[k + 1]) {
-        let tmp = arr[k]
-        arr[k] = arr[k + 1]
-        arr[k + 1] = tmp
+        let tmp = arr[k];
+        arr[k] = arr[k + 1];
+        arr[k + 1] = tmp;
       }
     }
   }
-
-  let d2 = new Date();
-
-  let time = d2.getMilliseconds() - d1.getMilliseconds();
-
-  return time;
+  return arr;
 }
-
-console.log(bubbleSort(arr));
-
-let d1 = new Date();
-mergeSort(arr);
-let d2 = new Date();
-
-let time = d2.getMilliseconds() - d1.getMilliseconds();
-
-console.log(time);
