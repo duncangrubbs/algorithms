@@ -84,3 +84,32 @@ function bubbleSort(arr) {
   }
   return arr;
 }
+
+
+// SELECTION SORT
+function selectionSort(arr) {
+  // Sorted Array
+  let a = [];
+  
+  // Outer-loop
+  for (let i = 0; i < arr.length; i++) {
+    arr.splice(min(arr, i, arr.length)[1], 1)
+    a.push(min(arr, i, arr.length)[0]);
+  }
+  return a;
+}
+
+function min(a, l, u) {
+  let m = a[l];
+  let spot = 0;
+  for (let i = l; i < u; i++) {
+    if (a[i] < m) {
+      m = a[i];
+      spot = i;
+    }
+  }
+  return [m, spot];
+}
+
+console.log(selectionSort(a));
+console.log(bubbleSort(a));
