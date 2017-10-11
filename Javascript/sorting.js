@@ -1,5 +1,4 @@
-let a = [4, 61, 2, 43, 8, 7, 4, 6, 5, 72, 24, 1, 4, 31, 33, 4, 56, 76, 34, 23, 84, 63, 56, 73, 12, 54, 32, 21, 54, 90, 43, 21,
-            55, 43, 2, 4, 56, 786, 43, 5, 67, 45, 20, 21, 34, 67, 45, 34, 89, 90, 21, 78, 34, 23, 21, 5, 3, 23, 2, 99, 234, 54, 123, 45, 867, 34, 67, 2];
+let a = [8, 5, 6, 3, 2, 10, 7, 4, 1, 9];
 
 // QUICK SORT
 
@@ -74,7 +73,7 @@ function merge(left, right) {
 
 function bubbleSort(arr) {
   for (let i = 0; i < arr.length; i++) {
-    for (let k = 0; k < arr.length; k++) {
+    for (let k = 0; k < arr.length - 1; k++) {
       if (arr[k] > arr[k + 1]) {
         let tmp = arr[k];
         arr[k] = arr[k + 1];
@@ -88,28 +87,34 @@ function bubbleSort(arr) {
 
 // SELECTION SORT
 function selectionSort(arr) {
-  // Sorted Array
-  let a = [];
-  
   // Outer-loop
-  for (let i = 0; i < arr.length; i++) {
-    arr.splice(min(arr, i, arr.length)[1], 1)
-    a.push(min(arr, i, arr.length)[0]);
+  let LENGTH = arr.length;
+  for (let i = 0; i < LENGTH; i++) {
+    let min_index = min(arr, i, LENGTH);
+    if (min_index > i) {
+      arr = swap(arr, i, min_index);
+    }
   }
-  return a;
+  return arr;
 }
 
-function min(a, l, u) {
-  let m = a[l];
+function swap(arr, i, j) {
+  let t = arr[i];
+  arr[i] = arr[j];
+  arr[j] = t;
+  return arr;
+}
+
+function min(ar, l, u) {
+  let m = ar[l];
   let spot = 0;
   for (let i = l; i < u; i++) {
-    if (a[i] < m) {
-      m = a[i];
+    if (ar[i] < m) {
+      m = ar[i];
       spot = i;
     }
   }
-  return [m, spot];
+  return spot;
 }
 
 console.log(selectionSort(a));
-console.log(bubbleSort(a));
