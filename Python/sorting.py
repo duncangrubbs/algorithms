@@ -1,7 +1,7 @@
 array = [1, 66, 45, 3, 2, 45, 23, 12, 68, 44, 3, 6, 9, 11, 15, 23, 56, 98, 65, 0]
 
 # BUBBLE SORT
-def bubbleSort(arr):
+def bubble_sort(arr):
     for i in range(len(array)):
         for k in range(len(array) - 1):
             if (arr[k] > arr[k+1]):
@@ -12,7 +12,7 @@ def bubbleSort(arr):
 
 # SELECTION SORT
 
-def selectionSort(arr):
+def selection_sort(arr):
     length = len(arr)
     for i in range(length):
         min_index = find_min(arr, i, length)
@@ -35,5 +35,5 @@ def find_min(arr, low, up):
             min_index = i
     return min_index
 
-print(selectionSort(array))
+# print(selectionSort(array))
 
