@@ -40,5 +40,20 @@ const B = [[1, 5, 3],
            [4, 1, 4],
            [3, 3, 2]];
 
-console.log(determinant(A));
+let C = [];
+let x = 1;
+for (let i = 1; i <= 10; i++) {
+  let tmp = [];
+  for (let k = 1; k <= 10; k++) {
+    tmp.push(x);
+    x++;
+  }
+  C.push(tmp);
+  tmp = [];
+}
+
+// console.log(C); // eslint-disable-line
+
+// console.log(determinant(A));
 console.log(determinant(B));
+// console.log(determinant(C));
