@@ -40,20 +40,26 @@ const B = [[1, 5, 3],
            [4, 1, 4],
            [3, 3, 2]];
 
+const E = [[1, 0, 0, 0],
+           [0, 1, 0, 0],
+           [2, 0, 1, 2],
+           [0, 3, 2, 1]];
+
 let C = [];
 let x = 1;
-for (let i = 1; i <= 10; i++) {
+for (let i = 1; i <= 5; i++) {
   let tmp = [];
-  for (let k = 1; k <= 10; k++) {
-    tmp.push(x);
+  for (let k = 1; k <= 5; k++) {
+    tmp.push(Math.ceil(Math.random() * 10));
     x++;
   }
   C.push(tmp);
   tmp = [];
 }
 
-// console.log(C); // eslint-disable-line
+console.log(C); // eslint-disable-line
 
 // console.log(determinant(A));
 console.log(determinant(B));
-// console.log(determinant(C));
+console.log(determinant(E));
+console.log(determinant(C));
